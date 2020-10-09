@@ -7,15 +7,21 @@ Returns: a List of integers
 Notes:
 - loop through all the numbers 
 - multiple each number in the array except for that index
+
+step:
+- multiply each number in an array
+- after after multiply everything except for current index
 '''
 
 
 def product_of_all_other_numbers(arr):
-    # Your code here
-    nums = 1
+    prod = 1
+
     for i in arr:
-        nums = arr[i:] * arr[i:]
-        return nums
+        prod *= i
+
+    all_nums = [prod//i for i in arr]
+    return all_nums
 
 
 if __name__ == '__main__':
